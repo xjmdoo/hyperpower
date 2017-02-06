@@ -120,10 +120,7 @@ exports.decorateTerm = (Term, { React, notify }) => {
     }
 
     _spawnParticles (x, y) {
-      // const { colors } = this.props;
-      const colors = this.props.wowMode
-        ? values(this.props.colors).map(toHex)
-        : [toHex(this.props.cursorColor)];
+      const colors = values(this.props.colors).map(toHex);
       const numParticles = PARTICLE_NUM_RANGE();
       for (let i = 0; i < numParticles; i++) {
         const colorCode = colors[i % colors.length];
